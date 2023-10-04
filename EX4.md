@@ -12,31 +12,31 @@
 
 ### Program:
 ```
-SQL> CREATE TABLE empl(
-  2       empid NUMBER,
-  3       empname VARCHAR(10),
-  4       dept VARCHAR(10),
-  5       salary NUMBER
-  6      );
+CREATE TABLE empq(
+  2          empid NUMBER,
+  3          empname VARCHAR(10),
+  4          dept VARCHAR(10),
+  5          salary NUMBER
+  6          );
 
 SQL> CREATE OR REPLACE PROCEDURE emp_data AS
-  2      BEGIN
-  3      INSERT INTO empl(empid,empname,dept,salary)
-  4      values(1,'SHRIRAM','MD',10000000);
-  5      INSERT INTO empl(empid,empname,dept,salary)
-  6      values(2,'KANISHKAR','HR',500000);
-  7      INSERT INTO empl(empid,empname,dept,salary)
-  8      values(3,'PRAVEEN','IT',200000);
-  9      COMMIT;
- 10     FOR emp_rec IN (SELECT * FROM empl)LOOP
- 11     DBMS_OUTPUT.PUT_LINE('EMPLOYEE ID:'||emp_rec.empid||',EMPLOYEE NAME:'|| emp_rec.empname||
- 12     ',DEPARTMENT:'||emp_rec.dept||',SALARY:'||emp_rec.salary);
- 13     END LOOP;
- 14     END;
- 15    /
+        BEGIN      INSERT INTO empq(empid,empname,dept,salary)
+        values(1,'dinesh','MD',10000000);
+        INSERT INTO empq(empid,empname,dept,salary)
+        values(2,'rathish','HR',500000);
+        INSERT INTO empq(empid,empname,dept,salary)
+        values(3,'faizal','IT',200000);
+        COMMIT;
+      FOR emp_rec IN (SELECT * FROM empq)LOOP
+      DBMS_OUTPUT.PUT_LINE('EMPLOYEE ID:'||emp_rec.empid||',EMPLOYEE NAME:'|| emp_rec.empname||
+      ',DEPARTMENT:'||emp_rec.dept||',SALARY:'||emp_rec.salary);
+      END LOOP;
+      END;
+     /
  ```
 ### Output:
-![image](https://github.com/JivanKarthick/Ex-No-4-Creating-Procedures-using-PL-SQL/assets/121165867/f88dd0c9-b2be-435b-83e9-7f1df6a465b1)
+![image](https://github.com/JivanKarthick/Ex-No-4-Creating-Procedures-using-PL-SQL/assets/121165867/765d065b-7cc8-40ec-8ce5-d5defb99b915)
+
 
 
 ### Result:
